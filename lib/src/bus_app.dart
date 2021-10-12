@@ -1,8 +1,10 @@
-import 'package:busapp/src/misc/colors.dart';
+import 'misc/colors.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
+
+import 'screens/home_screen.dart';
 
 class BusApp extends StatefulWidget {
   const BusApp({Key? key}) : super(key: key);
@@ -36,7 +38,7 @@ class _BusAppState extends State<BusApp> {
           DefaultCupertinoLocalizations.delegate,
         ],
         title: "Bus App",
-        home: const BusAppTabs(),
+        home: const HomeScreen(),
         material: (_, __) => MaterialAppData(
           theme: ThemeData(
             brightness: Brightness.light,
@@ -71,25 +73,9 @@ class _BusAppState extends State<BusApp> {
           themeMode: ThemeMode.system,
         ),
         cupertino: (_, __) => CupertinoAppData(
-          theme: MediaQuery.of(context).platformBrightness == Brightness.light
-              ? lightTheme
-              : darkTheme,
+          theme: MediaQuery.of(context).platformBrightness == Brightness.light ? lightTheme : darkTheme,
         ),
       ),
     );
-  }
-}
-
-class BusAppTabs extends StatefulWidget {
-  const BusAppTabs({Key? key}) : super(key: key);
-
-  @override
-  _BusAppTabsState createState() => _BusAppTabsState();
-}
-
-class _BusAppTabsState extends State<BusAppTabs> {
-  @override
-  Widget build(BuildContext context) {
-    return Container();
   }
 }

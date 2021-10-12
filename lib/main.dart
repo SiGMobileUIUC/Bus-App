@@ -1,4 +1,4 @@
-import 'package:busapp/src/bus_app.dart';
+import 'src/bus_app.dart';
 import 'package:flutter/material.dart';
 
 /*
