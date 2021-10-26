@@ -27,13 +27,16 @@ dependencies:
     sdk: flutter
   flutter_platform_widgets: ^1.9.5
   google_maps_flutter: ^2.0.11
+  json_annotation: ^4.3.0
   material_floating_search_bar: ^0.3.4
   provider: ^6.0.1
 
 dev_dependencies:
+  build_runner: ^2.1.4
   flutter_lints: null
   flutter_test:
     sdk: flutter
+  json_serializable: ^6.0.1
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 # The following section is specific to Flutter.
