@@ -28,6 +28,7 @@ dependencies:
   flutter_platform_widgets: ^1.9.5
   google_maps_flutter: ^2.0.11
   material_floating_search_bar: ^0.3.4
+  provider: ^6.0.1
 
 dev_dependencies:
   flutter_lints: null
