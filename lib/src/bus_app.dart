@@ -1,13 +1,12 @@
-import 'services/api_service.dart';
-import 'package:provider/provider.dart';
-
-import 'misc/colors.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
+import 'package:provider/provider.dart';
 
+import 'misc/colors.dart';
 import 'screens/home_screen.dart';
+import 'services/api_service.dart';
 
 class BusApp extends StatefulWidget {
   const BusApp({Key? key}) : super(key: key);
