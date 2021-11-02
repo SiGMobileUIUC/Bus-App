@@ -11,7 +11,7 @@ class StopPoint {
   @JsonKey(name: 'stop_lat')
   late double lat;
   @JsonKey(name: 'stop_lon')
-  late double lon;
+  late double lng;
   @JsonKey(name: 'stop_name')
   late String name;
 
@@ -19,11 +19,11 @@ class StopPoint {
     required this.code,
     required this.id,
     required this.lat,
-    required this.lon,
+    required this.lng,
     required this.name,
   });
 
-  LatLng get latLng => LatLng(lat, lon);
+  LatLng get latLng => LatLng(lat, lng);
 
   factory StopPoint.fromJson(Map<String, dynamic> json) => _$StopPointFromJson(json);
 
@@ -31,6 +31,6 @@ class StopPoint {
 
   @override
   String toString() {
-    return 'StopPoint(code: $code, id: $id, lat: $lat, lon: $lon, name: $name)';
+    return 'StopPoint(code: $code, id: $id, lat: $lat, lng: $lng, name: $name)';
   }
 }
