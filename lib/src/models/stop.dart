@@ -11,6 +11,7 @@ class Stop {
   @JsonKey(name: 'stop_name')
   late String name;
   late String code;
+  late double? distance;
   @JsonKey(name: 'stop_points')
   late List<StopPoint> stopPoints;
 
@@ -18,6 +19,7 @@ class Stop {
     required this.id,
     required this.name,
     required this.code,
+    required this.distance,
     required this.stopPoints,
   });
 
@@ -27,6 +29,6 @@ class Stop {
 
   @override
   String toString() {
-    return 'Stop(id: $id, name: $name, code: $code, stopPoints: $stopPoints)';
+    return 'Stop(id: $id, name: $name, code: $code, distance: $distance, stopPoints: $stopPoints)';
   }
 }
