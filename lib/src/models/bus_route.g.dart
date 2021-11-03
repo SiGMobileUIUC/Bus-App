@@ -1,12 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'route.dart';
+part of 'bus_route.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-Route _$RouteFromJson(Map<String, dynamic> json) => Route(
+BusRoute _$BusRouteFromJson(Map<String, dynamic> json) => BusRoute(
       color: json['route_color'] as String,
       id: json['route_id'] as String,
       longName: json['route_long_name'] as String,
@@ -14,7 +14,7 @@ Route _$RouteFromJson(Map<String, dynamic> json) => Route(
       textColor: json['route_text_color'] as String,
     );
 
-Map<String, dynamic> _$RouteToJson(Route instance) => <String, dynamic>{
+Map<String, dynamic> _$BusRouteToJson(BusRoute instance) => <String, dynamic>{
       'route_color': instance.color,
       'route_id': instance.id,
       'route_long_name': instance.longName,

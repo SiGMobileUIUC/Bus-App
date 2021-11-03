@@ -1,9 +1,9 @@
 import 'package:json_annotation/json_annotation.dart';
 
-part 'route.g.dart';
+part 'bus_route.g.dart';
 
 @JsonSerializable()
-class Route {
+class BusRoute {
   @JsonKey(name: 'route_color')
   late String color;
   @JsonKey(name: 'route_id')
@@ -15,7 +15,7 @@ class Route {
   @JsonKey(name: 'route_text_color')
   late String textColor;
 
-  Route({
+  BusRoute({
     required this.color,
     required this.id,
     required this.longName,
@@ -23,7 +23,7 @@ class Route {
     required this.textColor,
   });
 
-  factory Route.fromJson(Map<String, dynamic> json) => _$RouteFromJson(json);
+  factory BusRoute.fromJson(Map<String, dynamic> json) => _$BusRouteFromJson(json);
 
-  Map<String, dynamic> toJson() => _$RouteToJson(this);
+  Map<String, dynamic> toJson() => _$BusRouteToJson(this);
 }
