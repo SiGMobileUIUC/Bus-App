@@ -1,3 +1,4 @@
+import 'package:busapp/src/models/bus_route.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 import '../models/stop.dart';
@@ -13,12 +14,54 @@ class ApiService {
     );
   }
 
+  // ROUTES
+  Future<List<BusRoute>> getRoutes(List<String> routeIds) async {
+    Response res = await _dio.get(
+      'getroute',
+      queryParameters: {
+        'key': _apiKey,
+        'route_id': routeIds.reduce((value, element) => '$value;$element'),
+      },
+    );
+
+    final List<Map<String, dynamic>> routesJson =
+        ((res.data as Map<String, dynamic>)['routes'] as List).map((e) => (e as Map<String, dynamic>)).toList();
+    return routesJson.map((e) => BusRoute.fromJson(e)).toList();
+  }
+
+  Future<List<BusRoute>> getAllRoutes(List<String> routeIds) async {
+    Response res = await _dio.get(
+      'getroute',
+      queryParameters: {'key': _apiKey},
+    );
+
+    final List<Map<String, dynamic>> routesJson =
+        ((res.data as Map<String, dynamic>)['routes'] as List).map((e) => (e as Map<String, dynamic>)).toList();
+    return routesJson.map((e) => BusRoute.fromJson(e)).toList();
+  }
+
+  Future<List<BusRoute>> getRoutesByStop(String stopId) async {
+    Response res = await _dio.get(
+      'getroute',
+      queryParameters: {
+        'key': _apiKey,
+        'stop_id': stopId,
+      },
+    );
+
+    final List<Map<String, dynamic>> routesJson =
+        ((res.data as Map<String, dynamic>)['routes'] as List).map((e) => (e as Map<String, dynamic>)).toList();
+    return routesJson.map((e) => BusRoute.fromJson(e)).toList();
+  }
+
+  // STOPS
+
   Future<List<Stop>> getStops(List<String> stopIds) async {
     Response res = await _dio.get(
       'getstop',
       queryParameters: {
         'key': _apiKey,
-        'stop_id': stopIds.reduce((value, element) => value + ';' + element),
+        'stop_id': stopIds.reduce((value, element) => '$value;$element'),
       },
     );
     final List<Map<String, dynamic>> stopsJson =
