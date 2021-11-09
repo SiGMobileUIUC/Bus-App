@@ -1,8 +1,8 @@
-import 'package:busapp/src/models/bus_route.dart';
+import 'package:dio/dio.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
+import '../models/bus_route.dart';
 import '../models/stop.dart';
-import 'package:dio/dio.dart';
 
 class ApiService {
   late Dio _dio;
@@ -15,6 +15,7 @@ class ApiService {
   }
 
   // ROUTES
+
   Future<List<BusRoute>> getRoutes(List<String> routeIds) async {
     Response res = await _dio.get(
       'getroute',
