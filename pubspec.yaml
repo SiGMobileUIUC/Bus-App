@@ -25,6 +25,10 @@ dependencies:
   dio: ^4.0.0
   flutter:
     sdk: flutter
+<<<<<<< HEAD
+=======
+  flutter_config: ^2.0.0
+>>>>>>> 446ec05cfd7d27686aab9f674d93c20220eb0a0f
   flutter_platform_widgets: ^1.9.5
   google_maps_flutter: ^2.0.11
   json_annotation: ^4.3.0
