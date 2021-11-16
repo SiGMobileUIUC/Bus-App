@@ -1,7 +1,9 @@
+import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 import '../models/bus_route.dart';
+import '../models/failure.dart';
 import '../models/stop.dart';
 
 class ApiService {
@@ -16,82 +18,106 @@ class ApiService {
 
   // ROUTES
 
-  Future<List<BusRoute>> getRoutes(List<String> routeIds) async {
-    Response res = await _dio.get(
-      'getroute',
-      queryParameters: {
-        'key': _apiKey,
-        'route_id': routeIds.reduce((value, element) => '$value;$element'),
-      },
-    );
+  Future<Either<Failure, List<BusRoute>>> getRoutes(List<String> routeIds) async {
+    try {
+      Response res = await _dio.get(
+        'getroute',
+        queryParameters: {
+          'key': _apiKey,
+          'route_id': routeIds.reduce((value, element) => '$value;$element'),
+        },
+      );
 
-    final List<Map<String, dynamic>> routesJson =
-        ((res.data as Map<String, dynamic>)['routes'] as List).map((e) => (e as Map<String, dynamic>)).toList();
-    return routesJson.map((e) => BusRoute.fromJson(e)).toList();
+      final List<Map<String, dynamic>> routesJson =
+          ((res.data as Map<String, dynamic>)['routes'] as List).map((e) => (e as Map<String, dynamic>)).toList();
+      return right(routesJson.map((e) => BusRoute.fromJson(e)).toList());
+    } catch (e) {
+      return left(Failure(message: 'Not working'));
+    }
   }
 
-  Future<List<BusRoute>> getAllRoutes(List<String> routeIds) async {
-    Response res = await _dio.get(
-      'getroute',
-      queryParameters: {'key': _apiKey},
-    );
+  Future<Either<Failure, List<BusRoute>>> getAllRoutes(List<String> routeIds) async {
+    try {
+      Response res = await _dio.get(
+        'getroute',
+        queryParameters: {'key': _apiKey},
+      );
 
-    final List<Map<String, dynamic>> routesJson =
-        ((res.data as Map<String, dynamic>)['routes'] as List).map((e) => (e as Map<String, dynamic>)).toList();
-    return routesJson.map((e) => BusRoute.fromJson(e)).toList();
+      final List<Map<String, dynamic>> routesJson =
+          ((res.data as Map<String, dynamic>)['routes'] as List).map((e) => (e as Map<String, dynamic>)).toList();
+      return right(routesJson.map((e) => BusRoute.fromJson(e)).toList());
+    } catch (e) {
+      return left(Failure(message: 'Not Working'));
+    }
   }
 
-  Future<List<BusRoute>> getRoutesByStop(String stopId) async {
-    Response res = await _dio.get(
-      'getroute',
-      queryParameters: {
-        'key': _apiKey,
-        'stop_id': stopId,
-      },
-    );
+  Future<Either<Failure, List<BusRoute>>> getRoutesByStop(String stopId) async {
+    try {
+      Response res = await _dio.get(
+        'getroute',
+        queryParameters: {
+          'key': _apiKey,
+          'stop_id': stopId,
+        },
+      );
 
-    final List<Map<String, dynamic>> routesJson =
-        ((res.data as Map<String, dynamic>)['routes'] as List).map((e) => (e as Map<String, dynamic>)).toList();
-    return routesJson.map((e) => BusRoute.fromJson(e)).toList();
+      final List<Map<String, dynamic>> routesJson =
+          ((res.data as Map<String, dynamic>)['routes'] as List).map((e) => (e as Map<String, dynamic>)).toList();
+      return right(routesJson.map((e) => BusRoute.fromJson(e)).toList());
+    } catch (e) {
+      return left(Failure(message: 'Not Working'));
+    }
   }
 
   // STOPS
 
-  Future<List<Stop>> getStops(List<String> stopIds) async {
-    Response res = await _dio.get(
-      'getstop',
-      queryParameters: {
-        'key': _apiKey,
-        'stop_id': stopIds.reduce((value, element) => '$value;$element'),
-      },
-    );
-    final List<Map<String, dynamic>> stopsJson =
-        ((res.data as Map<String, dynamic>)['stops'] as List).map((e) => (e as Map<String, dynamic>)).toList();
-    return stopsJson.map((e) => Stop.fromJson(e)).toList();
+  Future<Either<Failure, List<Stop>>> getStops(List<String> stopIds) async {
+    try {
+      Response res = await _dio.get(
+        'getstop',
+        queryParameters: {
+          'key': _apiKey,
+          'stop_id': stopIds.reduce((value, element) => '$value;$element'),
+        },
+      );
+      final List<Map<String, dynamic>> stopsJson =
+          ((res.data as Map<String, dynamic>)['stops'] as List).map((e) => (e as Map<String, dynamic>)).toList();
+      return right(stopsJson.map((e) => Stop.fromJson(e)).toList());
+    } catch (e) {
+      return left(Failure(message: 'Not working'));
+    }
   }
 
-  Future<List<Stop>> getAllStops() async {
-    Response res = await _dio.get(
-      'getstops',
-      queryParameters: {'key': _apiKey},
-    );
-    final List<Map<String, dynamic>> stopsJson =
-        ((res.data as Map<String, dynamic>)['stops'] as List).map((e) => (e as Map<String, dynamic>)).toList();
-    return stopsJson.map((e) => Stop.fromJson(e)).toList();
+  Future<Either<Failure, List<Stop>>> getAllStops() async {
+    try {
+      Response res = await _dio.get(
+        'getstops',
+        queryParameters: {'key': _apiKey},
+      );
+      final List<Map<String, dynamic>> stopsJson =
+          ((res.data as Map<String, dynamic>)['stops'] as List).map((e) => (e as Map<String, dynamic>)).toList();
+      return right(stopsJson.map((e) => Stop.fromJson(e)).toList());
+    } catch (e) {
+      return left(Failure(message: 'Not Working'));
+    }
   }
 
-  Future<List<Stop>> getStopsNearLatLng(LatLng latLng, {int count = 20}) async {
-    Response res = await _dio.get(
-      'getstopsbylatlon',
-      queryParameters: {
-        'key': _apiKey,
-        'lat': latLng.latitude,
-        'lon': latLng.longitude,
-        'count': count,
-      },
-    );
-    final List<Map<String, dynamic>> stopsJson =
-        ((res.data as Map<String, dynamic>)['stops'] as List).map((e) => (e as Map<String, dynamic>)).toList();
-    return stopsJson.map((e) => Stop.fromJson(e)).toList();
+  Future<Either<Failure, List<Stop>>> getStopsNearLatLng(LatLng latLng, {int count = 20}) async {
+    try {
+      Response res = await _dio.get(
+        'getstopsbylatlon',
+        queryParameters: {
+          'key': _apiKey,
+          'lat': latLng.latitude,
+          'lon': latLng.longitude,
+          'count': count,
+        },
+      );
+      final List<Map<String, dynamic>> stopsJson =
+          ((res.data as Map<String, dynamic>)['stops'] as List).map((e) => (e as Map<String, dynamic>)).toList();
+      return right(stopsJson.map((e) => Stop.fromJson(e)).toList());
+    } catch (e) {
+      return left(Failure(message: 'Not Working'));
+    }
   }
 }
