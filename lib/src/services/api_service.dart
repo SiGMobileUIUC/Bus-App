@@ -1,16 +1,10 @@
-<<<<<<< Updated upstream
 import 'package:dio/dio.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 import '../models/bus_route.dart';
 import '../models/stop.dart';
-
-=======
-import '../models/stop.dart';
 import '../models/vehicle.dart';
-import 'package:dio/dio.dart';
-//https://developer.cumtd.com/
->>>>>>> Stashed changes
+
 class ApiService {
   late Dio _dio;
   static const String _apiKey = '***REMOVED***';
@@ -87,7 +81,6 @@ class ApiService {
     return stopsJson.map((e) => Stop.fromJson(e)).toList();
   }
 
-<<<<<<< Updated upstream
   Future<List<Stop>> getStopsNearLatLng(LatLng latLng, {int count = 20}) async {
     Response res = await _dio.get(
       'getstopsbylatlon',
@@ -102,7 +95,8 @@ class ApiService {
         ((res.data as Map<String, dynamic>)['stops'] as List).map((e) => (e as Map<String, dynamic>)).toList();
     return stopsJson.map((e) => Stop.fromJson(e)).toList();
   }
-=======
+
+  // VEHICLE
   Future<Vehicle> getVehicle(String vehicleId) async {
     Response res = await _dio.get(
       'getVehicle',
@@ -113,5 +107,4 @@ class ApiService {
     return Vehicle.fromJson(res.data as Map<String, dynamic>);
   }
 
->>>>>>> Stashed changes
 }
