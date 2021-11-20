@@ -5,6 +5,7 @@ import 'package:google_maps_flutter/google_maps_flutter.dart';
 import '../models/bus_route.dart';
 import '../models/failure.dart';
 import '../models/stop.dart';
+import '../models/vehicle.dart';
 
 class ApiService {
   late Dio _dio;
@@ -119,5 +120,15 @@ class ApiService {
     } catch (e) {
       return left(Failure(message: 'Not Working'));
     }
+  }
+
+  // VEHICLE
+  Future<Vehicle> getVehicle(String vehicleId) async {
+    Response res = await _dio.get(
+      'getVehicle',
+      queryParameters: {'key': _apiKey, 'vehicle_id': vehicleId},
+    );
+
+    return Vehicle.fromJson(res.data as Map<String, dynamic>);
   }
 }
