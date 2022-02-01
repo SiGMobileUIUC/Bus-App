@@ -30,7 +30,7 @@ class ApiService {
       );
 
       final List<Map<String, dynamic>> routesJson =
-          ((res.data as Map<String, dynamic>)['routes'] as List).map((e) => (e as Map<String, dynamic>)).toList();
+          ((res.data as Map<String, dynamic>)['routes'] as List).cast<Map<String, dynamic>>();
       return right(routesJson.map((e) => BusRoute.fromJson(e)).toList());
     } catch (e) {
       return left(Failure(message: 'Not working'));
@@ -45,7 +45,7 @@ class ApiService {
       );
 
       final List<Map<String, dynamic>> routesJson =
-          ((res.data as Map<String, dynamic>)['routes'] as List).map((e) => (e as Map<String, dynamic>)).toList();
+          ((res.data as Map<String, dynamic>)['routes'] as List).cast<Map<String, dynamic>>();
       return right(routesJson.map((e) => BusRoute.fromJson(e)).toList());
     } catch (e) {
       return left(Failure(message: 'Not Working'));
@@ -63,7 +63,7 @@ class ApiService {
       );
 
       final List<Map<String, dynamic>> routesJson =
-          ((res.data as Map<String, dynamic>)['routes'] as List).map((e) => (e as Map<String, dynamic>)).toList();
+          ((res.data as Map<String, dynamic>)['routes'] as List).cast<Map<String, dynamic>>();
       return right(routesJson.map((e) => BusRoute.fromJson(e)).toList());
     } catch (e) {
       return left(Failure(message: 'Not Working'));
@@ -82,7 +82,7 @@ class ApiService {
         },
       );
       final List<Map<String, dynamic>> stopsJson =
-          ((res.data as Map<String, dynamic>)['stops'] as List).map((e) => (e as Map<String, dynamic>)).toList();
+          ((res.data as Map<String, dynamic>)['stops'] as List).cast<Map<String, dynamic>>();
       return right(stopsJson.map((e) => Stop.fromJson(e)).toList());
     } catch (e) {
       return left(Failure(message: 'Not working'));
@@ -96,7 +96,7 @@ class ApiService {
         queryParameters: {'key': _apiKey},
       );
       final List<Map<String, dynamic>> stopsJson =
-          ((res.data as Map<String, dynamic>)['stops'] as List).map((e) => (e as Map<String, dynamic>)).toList();
+          ((res.data as Map<String, dynamic>)['stops'] as List).cast<Map<String, dynamic>>();
       return right(stopsJson.map((e) => Stop.fromJson(e)).toList());
     } catch (e) {
       return left(Failure(message: 'Not Working'));
@@ -115,7 +115,7 @@ class ApiService {
         },
       );
       final List<Map<String, dynamic>> stopsJson =
-          ((res.data as Map<String, dynamic>)['stops'] as List).map((e) => (e as Map<String, dynamic>)).toList();
+          ((res.data as Map<String, dynamic>)['stops'] as List).cast<Map<String, dynamic>>();
       return right(stopsJson.map((e) => Stop.fromJson(e)).toList());
     } catch (e) {
       return left(Failure(message: 'Not Working'));
