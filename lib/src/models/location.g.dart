@@ -8,11 +8,11 @@ part of 'location.dart';
 
 _$_Location _$$_LocationFromJson(Map<String, dynamic> json) => _$_Location(
       lat: (json['lat'] as num).toDouble(),
-      lng: (json['lng'] as num).toDouble(),
+      lon: (json['lon'] as num).toDouble(),
     );
 
 Map<String, dynamic> _$$_LocationToJson(_$_Location instance) =>
     <String, dynamic>{
       'lat': instance.lat,
-      'lng': instance.lng,
+      'lon': instance.lon,
     };
