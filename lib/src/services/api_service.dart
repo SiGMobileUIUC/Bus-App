@@ -1,9 +1,11 @@
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
-import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:pretty_json/pretty_json.dart';
 
+import '../models/api_response.dart';
 import '../models/bus_route.dart';
 import '../models/failure.dart';
+import '../models/location.dart';
 import '../models/stop.dart';
 import '../models/vehicle.dart';
 
@@ -17,9 +19,9 @@ class ApiService {
     );
   }
 
-  // ROUTES
+  //* ROUTES
 
-  Future<Either<Failure, List<BusRoute>>> getRoutes(List<String> routeIds) async {
+  Future<Either<Failure, List<BusRoute>>> getRoutes({required List<String> routeIds}) async {
     try {
       Response res = await _dio.get(
         'getroute',
@@ -28,31 +30,34 @@ class ApiService {
           'route_id': routeIds.reduce((value, element) => '$value;$element'),
         },
       );
-
-      final List<Map<String, dynamic>> routesJson =
-          ((res.data as Map<String, dynamic>)['routes'] as List).cast<Map<String, dynamic>>();
-      return right(routesJson.map((e) => BusRoute.fromJson(e)).toList());
+      final ApiResponse apiResponse = ApiResponse.fromJsonWithData(
+        res.data as Map<String, dynamic>,
+        dataKey: 'routes',
+      );
+      return right(apiResponse.data.map((e) => BusRoute.fromJson(e)).toList());
     } catch (e) {
       return left(Failure(message: 'Not working'));
     }
   }
 
-  Future<Either<Failure, List<BusRoute>>> getAllRoutes(List<String> routeIds) async {
+  Future<Either<Failure, List<BusRoute>>> getAllRoutes({required List<String> routeIds}) async {
     try {
       Response res = await _dio.get(
         'getroute',
         queryParameters: {'key': _apiKey},
       );
 
-      final List<Map<String, dynamic>> routesJson =
-          ((res.data as Map<String, dynamic>)['routes'] as List).cast<Map<String, dynamic>>();
-      return right(routesJson.map((e) => BusRoute.fromJson(e)).toList());
+      final ApiResponse apiResponse = ApiResponse.fromJsonWithData(
+        res.data as Map<String, dynamic>,
+        dataKey: 'routes',
+      );
+      return right(apiResponse.data.map((e) => BusRoute.fromJson(e)).toList());
     } catch (e) {
       return left(Failure(message: 'Not Working'));
     }
   }
 
-  Future<Either<Failure, List<BusRoute>>> getRoutesByStop(String stopId) async {
+  Future<Either<Failure, List<BusRoute>>> getRoutesByStop({required String stopId}) async {
     try {
       Response res = await _dio.get(
         'getroute',
@@ -61,18 +66,19 @@ class ApiService {
           'stop_id': stopId,
         },
       );
-
-      final List<Map<String, dynamic>> routesJson =
-          ((res.data as Map<String, dynamic>)['routes'] as List).cast<Map<String, dynamic>>();
-      return right(routesJson.map((e) => BusRoute.fromJson(e)).toList());
+      final ApiResponse apiResponse = ApiResponse.fromJsonWithData(
+        res.data as Map<String, dynamic>,
+        dataKey: 'routes',
+      );
+      return right(apiResponse.data.map((e) => BusRoute.fromJson(e)).toList());
     } catch (e) {
       return left(Failure(message: 'Not Working'));
     }
   }
 
-  // STOPS
+  //* STOPS
 
-  Future<Either<Failure, List<Stop>>> getStops(List<String> stopIds) async {
+  Future<Either<Failure, List<Stop>>> getStops({required List<String> stopIds}) async {
     try {
       Response res = await _dio.get(
         'getstop',
@@ -81,9 +87,11 @@ class ApiService {
           'stop_id': stopIds.reduce((value, element) => '$value;$element'),
         },
       );
-      final List<Map<String, dynamic>> stopsJson =
-          ((res.data as Map<String, dynamic>)['stops'] as List).cast<Map<String, dynamic>>();
-      return right(stopsJson.map((e) => Stop.fromJson(e)).toList());
+      final ApiResponse apiResponse = ApiResponse.fromJsonWithData(
+        res.data as Map<String, dynamic>,
+        dataKey: 'stops',
+      );
+      return right(apiResponse.data.map((e) => Stop.fromJson(e)).toList());
     } catch (e) {
       return left(Failure(message: 'Not working'));
     }
@@ -95,40 +103,56 @@ class ApiService {
         'getstops',
         queryParameters: {'key': _apiKey},
       );
-      final List<Map<String, dynamic>> stopsJson =
-          ((res.data as Map<String, dynamic>)['stops'] as List).cast<Map<String, dynamic>>();
-      return right(stopsJson.map((e) => Stop.fromJson(e)).toList());
+      // printPrettyJson(res.data);
+      final ApiResponse apiResponse = ApiResponse.fromJsonWithData(
+        res.data as Map<String, dynamic>,
+        dataKey: 'stops',
+      );
+      print(apiResponse.data.map((e) => Stop.fromJson(e)).toList());
+      return right(apiResponse.data.map((e) => Stop.fromJson(e)).toList());
     } catch (e) {
       return left(Failure(message: 'Not Working'));
     }
   }
 
-  Future<Either<Failure, List<Stop>>> getStopsNearLatLng(LatLng latLng, {int count = 20}) async {
+  Future<Either<Failure, List<Stop>>> getStopsNearLatLon({required Location location, int count = 20}) async {
     try {
       Response res = await _dio.get(
         'getstopsbylatlon',
         queryParameters: {
           'key': _apiKey,
-          'lat': latLng.latitude,
-          'lon': latLng.longitude,
+          'lat': location.lat,
+          'lon': location.lon,
           'count': count,
         },
       );
-      final List<Map<String, dynamic>> stopsJson =
-          ((res.data as Map<String, dynamic>)['stops'] as List).cast<Map<String, dynamic>>();
-      return right(stopsJson.map((e) => Stop.fromJson(e)).toList());
+      final ApiResponse apiResponse = ApiResponse.fromJsonWithData(
+        res.data as Map<String, dynamic>,
+        dataKey: 'stops',
+      );
+      return right(apiResponse.data.map((e) => Stop.fromJson(e)).toList());
     } catch (e) {
       return left(Failure(message: 'Not Working'));
     }
   }
 
-  // VEHICLE
-  Future<Vehicle> getVehicle(String vehicleId) async {
-    Response res = await _dio.get(
-      'getVehicle',
-      queryParameters: {'key': _apiKey, 'vehicle_id': vehicleId},
-    );
-
-    return Vehicle.fromJson(res.data as Map<String, dynamic>);
+  //* VEHICLE
+  Future<Either<Failure, Vehicle>> getVehicle({required String vehicleId}) async {
+    try {
+      Response res = await _dio.get(
+        'getstopsbylatlon',
+        queryParameters: {
+          'key': _apiKey,
+          'vehicle_id': vehicleId,
+        },
+      );
+      final ApiResponse apiResponse = ApiResponse.fromJsonWithData(
+        res.data as Map<String, dynamic>,
+        dataKey: 'vehicles',
+      );
+      return right(apiResponse.data.map((e) => Vehicle.fromJson(e)).toList());
+    } catch (e) {
+      return left(Failure(message: 'Not Working'));
+    }
   }
 }
