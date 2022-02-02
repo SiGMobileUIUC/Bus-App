@@ -25,8 +25,8 @@ class _$StopPointTearOff {
   _StopPoint call(
       {required String code,
       required String stopId,
-      required String stopLat,
-      required String stopLon,
+      required double stopLat,
+      required double stopLon,
       required String stopName}) {
     return _StopPoint(
       code: code,
@@ -49,8 +49,8 @@ const $StopPoint = _$StopPointTearOff();
 mixin _$StopPoint {
   String get code => throw _privateConstructorUsedError;
   String get stopId => throw _privateConstructorUsedError;
-  String get stopLat => throw _privateConstructorUsedError;
-  String get stopLon => throw _privateConstructorUsedError;
+  double get stopLat => throw _privateConstructorUsedError;
+  double get stopLon => throw _privateConstructorUsedError;
   String get stopName => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -66,8 +66,8 @@ abstract class $StopPointCopyWith<$Res> {
   $Res call(
       {String code,
       String stopId,
-      String stopLat,
-      String stopLon,
+      double stopLat,
+      double stopLon,
       String stopName});
 }
 
@@ -99,11 +99,11 @@ class _$StopPointCopyWithImpl<$Res> implements $StopPointCopyWith<$Res> {
       stopLat: stopLat == freezed
           ? _value.stopLat
           : stopLat // ignore: cast_nullable_to_non_nullable
-              as String,
+              as double,
       stopLon: stopLon == freezed
           ? _value.stopLon
           : stopLon // ignore: cast_nullable_to_non_nullable
-              as String,
+              as double,
       stopName: stopName == freezed
           ? _value.stopName
           : stopName // ignore: cast_nullable_to_non_nullable
@@ -121,8 +121,8 @@ abstract class _$StopPointCopyWith<$Res> implements $StopPointCopyWith<$Res> {
   $Res call(
       {String code,
       String stopId,
-      String stopLat,
-      String stopLon,
+      double stopLat,
+      double stopLon,
       String stopName});
 }
 
@@ -155,11 +155,11 @@ class __$StopPointCopyWithImpl<$Res> extends _$StopPointCopyWithImpl<$Res>
       stopLat: stopLat == freezed
           ? _value.stopLat
           : stopLat // ignore: cast_nullable_to_non_nullable
-              as String,
+              as double,
       stopLon: stopLon == freezed
           ? _value.stopLon
           : stopLon // ignore: cast_nullable_to_non_nullable
-              as String,
+              as double,
       stopName: stopName == freezed
           ? _value.stopName
           : stopName // ignore: cast_nullable_to_non_nullable
@@ -187,9 +187,9 @@ class _$_StopPoint implements _StopPoint {
   @override
   final String stopId;
   @override
-  final String stopLat;
+  final double stopLat;
   @override
-  final String stopLon;
+  final double stopLon;
   @override
   final String stopName;
 
@@ -234,8 +234,8 @@ abstract class _StopPoint implements StopPoint {
   const factory _StopPoint(
       {required String code,
       required String stopId,
-      required String stopLat,
-      required String stopLon,
+      required double stopLat,
+      required double stopLon,
       required String stopName}) = _$_StopPoint;
 
   factory _StopPoint.fromJson(Map<String, dynamic> json) =
@@ -246,9 +246,9 @@ abstract class _StopPoint implements StopPoint {
   @override
   String get stopId;
   @override
-  String get stopLat;
+  double get stopLat;
   @override
-  String get stopLon;
+  double get stopLon;
   @override
   String get stopName;
   @override

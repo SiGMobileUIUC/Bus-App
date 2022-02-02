@@ -9,8 +9,8 @@ class StopPoint with _$StopPoint {
   const factory StopPoint({
     required String code,
     required String stopId,
-    required String stopLat,
-    required String stopLon,
+    required double stopLat,
+    required double stopLon,
     required String stopName,
   }) = _StopPoint;
 

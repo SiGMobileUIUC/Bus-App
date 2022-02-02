@@ -8,10 +8,10 @@ class Shape with _$Shape {
   @JsonSerializable(explicitToJson: true, fieldRename: FieldRename.snake)
   const factory Shape({
     required String shapeDistTraveled,
-    required String shapePtLat,
-    required String shapePtLon,
+    required double shapePtLat,
+    required double shapePtLon,
     required String stopId,
-    required String shapePtSequence,
+    required int shapePtSequence,
   }) = _Shape;
 
   factory Shape.fromJson(Map<String, dynamic> json) => _$ShapeFromJson(json);

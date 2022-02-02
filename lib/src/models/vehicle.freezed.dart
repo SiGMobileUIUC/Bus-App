@@ -80,6 +80,9 @@ abstract class $VehicleCopyWith<$Res> {
       String originStopId,
       String destinationStopId,
       DateTime lastUpdated});
+
+  $TripCopyWith<$Res> get trip;
+  $LocationCopyWith<$Res> get location;
 }
 
 /// @nodoc
@@ -136,6 +139,20 @@ class _$VehicleCopyWithImpl<$Res> implements $VehicleCopyWith<$Res> {
               as DateTime,
     ));
   }
+
+  @override
+  $TripCopyWith<$Res> get trip {
+    return $TripCopyWith<$Res>(_value.trip, (value) {
+      return _then(_value.copyWith(trip: value));
+    });
+  }
+
+  @override
+  $LocationCopyWith<$Res> get location {
+    return $LocationCopyWith<$Res>(_value.location, (value) {
+      return _then(_value.copyWith(location: value));
+    });
+  }
 }
 
 /// @nodoc
@@ -152,6 +169,11 @@ abstract class _$VehicleCopyWith<$Res> implements $VehicleCopyWith<$Res> {
       String originStopId,
       String destinationStopId,
       DateTime lastUpdated});
+
+  @override
+  $TripCopyWith<$Res> get trip;
+  @override
+  $LocationCopyWith<$Res> get location;
 }
 
 /// @nodoc

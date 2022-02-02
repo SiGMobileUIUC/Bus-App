@@ -102,6 +102,7 @@ abstract class $DepartureCopyWith<$Res> {
       Trip trip,
       String vehicleId});
 
+  $LocationCopyWith<$Res> get location;
   $TripCopyWith<$Res> get trip;
 }
 
@@ -186,6 +187,13 @@ class _$DepartureCopyWithImpl<$Res> implements $DepartureCopyWith<$Res> {
   }
 
   @override
+  $LocationCopyWith<$Res> get location {
+    return $LocationCopyWith<$Res>(_value.location, (value) {
+      return _then(_value.copyWith(location: value));
+    });
+  }
+
+  @override
   $TripCopyWith<$Res> get trip {
     return $TripCopyWith<$Res>(_value.trip, (value) {
       return _then(_value.copyWith(trip: value));
@@ -214,6 +222,8 @@ abstract class _$DepartureCopyWith<$Res> implements $DepartureCopyWith<$Res> {
       Trip trip,
       String vehicleId});
 
+  @override
+  $LocationCopyWith<$Res> get location;
   @override
   $TripCopyWith<$Res> get trip;
 }

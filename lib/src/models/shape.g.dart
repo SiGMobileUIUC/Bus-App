@@ -8,10 +8,10 @@ part of 'shape.dart';
 
 _$_Shape _$$_ShapeFromJson(Map<String, dynamic> json) => _$_Shape(
       shapeDistTraveled: json['shape_dist_traveled'] as String,
-      shapePtLat: json['shape_pt_lat'] as String,
-      shapePtLon: json['shape_pt_lon'] as String,
+      shapePtLat: (json['shape_pt_lat'] as num).toDouble(),
+      shapePtLon: (json['shape_pt_lon'] as num).toDouble(),
       stopId: json['stop_id'] as String,
-      shapePtSequence: json['shape_pt_sequence'] as String,
+      shapePtSequence: json['shape_pt_sequence'] as int,
     );
 
 Map<String, dynamic> _$$_ShapeToJson(_$_Shape instance) => <String, dynamic>{

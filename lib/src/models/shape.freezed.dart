@@ -24,10 +24,10 @@ class _$ShapeTearOff {
 
   _Shape call(
       {required String shapeDistTraveled,
-      required String shapePtLat,
-      required String shapePtLon,
+      required double shapePtLat,
+      required double shapePtLon,
       required String stopId,
-      required String shapePtSequence}) {
+      required int shapePtSequence}) {
     return _Shape(
       shapeDistTraveled: shapeDistTraveled,
       shapePtLat: shapePtLat,
@@ -48,10 +48,10 @@ const $Shape = _$ShapeTearOff();
 /// @nodoc
 mixin _$Shape {
   String get shapeDistTraveled => throw _privateConstructorUsedError;
-  String get shapePtLat => throw _privateConstructorUsedError;
-  String get shapePtLon => throw _privateConstructorUsedError;
+  double get shapePtLat => throw _privateConstructorUsedError;
+  double get shapePtLon => throw _privateConstructorUsedError;
   String get stopId => throw _privateConstructorUsedError;
-  String get shapePtSequence => throw _privateConstructorUsedError;
+  int get shapePtSequence => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -64,10 +64,10 @@ abstract class $ShapeCopyWith<$Res> {
       _$ShapeCopyWithImpl<$Res>;
   $Res call(
       {String shapeDistTraveled,
-      String shapePtLat,
-      String shapePtLon,
+      double shapePtLat,
+      double shapePtLon,
       String stopId,
-      String shapePtSequence});
+      int shapePtSequence});
 }
 
 /// @nodoc
@@ -94,11 +94,11 @@ class _$ShapeCopyWithImpl<$Res> implements $ShapeCopyWith<$Res> {
       shapePtLat: shapePtLat == freezed
           ? _value.shapePtLat
           : shapePtLat // ignore: cast_nullable_to_non_nullable
-              as String,
+              as double,
       shapePtLon: shapePtLon == freezed
           ? _value.shapePtLon
           : shapePtLon // ignore: cast_nullable_to_non_nullable
-              as String,
+              as double,
       stopId: stopId == freezed
           ? _value.stopId
           : stopId // ignore: cast_nullable_to_non_nullable
@@ -106,7 +106,7 @@ class _$ShapeCopyWithImpl<$Res> implements $ShapeCopyWith<$Res> {
       shapePtSequence: shapePtSequence == freezed
           ? _value.shapePtSequence
           : shapePtSequence // ignore: cast_nullable_to_non_nullable
-              as String,
+              as int,
     ));
   }
 }
@@ -118,10 +118,10 @@ abstract class _$ShapeCopyWith<$Res> implements $ShapeCopyWith<$Res> {
   @override
   $Res call(
       {String shapeDistTraveled,
-      String shapePtLat,
-      String shapePtLon,
+      double shapePtLat,
+      double shapePtLon,
       String stopId,
-      String shapePtSequence});
+      int shapePtSequence});
 }
 
 /// @nodoc
@@ -149,11 +149,11 @@ class __$ShapeCopyWithImpl<$Res> extends _$ShapeCopyWithImpl<$Res>
       shapePtLat: shapePtLat == freezed
           ? _value.shapePtLat
           : shapePtLat // ignore: cast_nullable_to_non_nullable
-              as String,
+              as double,
       shapePtLon: shapePtLon == freezed
           ? _value.shapePtLon
           : shapePtLon // ignore: cast_nullable_to_non_nullable
-              as String,
+              as double,
       stopId: stopId == freezed
           ? _value.stopId
           : stopId // ignore: cast_nullable_to_non_nullable
@@ -161,7 +161,7 @@ class __$ShapeCopyWithImpl<$Res> extends _$ShapeCopyWithImpl<$Res>
       shapePtSequence: shapePtSequence == freezed
           ? _value.shapePtSequence
           : shapePtSequence // ignore: cast_nullable_to_non_nullable
-              as String,
+              as int,
     ));
   }
 }
@@ -183,13 +183,13 @@ class _$_Shape implements _Shape {
   @override
   final String shapeDistTraveled;
   @override
-  final String shapePtLat;
+  final double shapePtLat;
   @override
-  final String shapePtLon;
+  final double shapePtLon;
   @override
   final String stopId;
   @override
-  final String shapePtSequence;
+  final int shapePtSequence;
 
   @override
   String toString() {
@@ -235,23 +235,23 @@ class _$_Shape implements _Shape {
 abstract class _Shape implements Shape {
   const factory _Shape(
       {required String shapeDistTraveled,
-      required String shapePtLat,
-      required String shapePtLon,
+      required double shapePtLat,
+      required double shapePtLon,
       required String stopId,
-      required String shapePtSequence}) = _$_Shape;
+      required int shapePtSequence}) = _$_Shape;
 
   factory _Shape.fromJson(Map<String, dynamic> json) = _$_Shape.fromJson;
 
   @override
   String get shapeDistTraveled;
   @override
-  String get shapePtLat;
+  double get shapePtLat;
   @override
-  String get shapePtLon;
+  double get shapePtLon;
   @override
   String get stopId;
   @override
-  String get shapePtSequence;
+  int get shapePtSequence;
   @override
   @JsonKey(ignore: true)
   _$ShapeCopyWith<_Shape> get copyWith => throw _privateConstructorUsedError;

@@ -9,8 +9,8 @@ part of 'stop_point.dart';
 _$_StopPoint _$$_StopPointFromJson(Map<String, dynamic> json) => _$_StopPoint(
       code: json['code'] as String,
       stopId: json['stop_id'] as String,
-      stopLat: json['stop_lat'] as String,
-      stopLon: json['stop_lon'] as String,
+      stopLat: (json['stop_lat'] as num).toDouble(),
+      stopLon: (json['stop_lon'] as num).toDouble(),
       stopName: json['stop_name'] as String,
     );
 
