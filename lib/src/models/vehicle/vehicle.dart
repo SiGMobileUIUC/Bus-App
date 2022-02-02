@@ -1,7 +1,7 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-import 'location.dart';
-import 'trip.dart';
+import '../location/location.dart';
+import '../trip/trip.dart';
 
 part 'vehicle.freezed.dart';
 part 'vehicle.g.dart';

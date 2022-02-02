@@ -2,12 +2,12 @@ import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 import 'package:pretty_json/pretty_json.dart';
 
-import '../models/api_response.dart';
-import '../models/bus_route.dart';
+import '../models/api_response/api_response.dart';
+import '../models/bus_route/bus_route.dart';
 import '../models/failure.dart';
-import '../models/location.dart';
-import '../models/stop.dart';
-import '../models/vehicle.dart';
+import '../models/location/location.dart';
+import '../models/stop/stop.dart';
+import '../models/vehicle/vehicle.dart';
 
 class ApiService {
   late Dio _dio;
