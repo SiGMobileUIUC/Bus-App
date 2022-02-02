@@ -169,7 +169,6 @@ class __$StopPointCopyWithImpl<$Res> extends _$StopPointCopyWithImpl<$Res>
 }
 
 /// @nodoc
-
 @JsonSerializable()
 class _$_StopPoint implements _StopPoint {
   const _$_StopPoint(

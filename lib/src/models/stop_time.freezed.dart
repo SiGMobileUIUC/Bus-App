@@ -168,7 +168,6 @@ class __$StopTimeCopyWithImpl<$Res> extends _$StopTimeCopyWithImpl<$Res>
 }
 
 /// @nodoc
-
 @JsonSerializable()
 class _$_StopTime implements _StopTime {
   const _$_StopTime(

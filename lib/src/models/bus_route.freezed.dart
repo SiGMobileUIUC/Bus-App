@@ -168,7 +168,6 @@ class __$BusRouteCopyWithImpl<$Res> extends _$BusRouteCopyWithImpl<$Res>
 }
 
 /// @nodoc
-
 @JsonSerializable()
 class _$_BusRoute implements _BusRoute {
   const _$_BusRoute(

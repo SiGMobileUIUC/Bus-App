@@ -5,7 +5,6 @@ part 'bus_route.g.dart';
 
 @freezed
 class BusRoute with _$BusRoute {
-  @JsonSerializable()
   const factory BusRoute({
     required String routeColor,
     required String routeId,

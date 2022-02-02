@@ -167,7 +167,6 @@ class __$ShapeCopyWithImpl<$Res> extends _$ShapeCopyWithImpl<$Res>
 }
 
 /// @nodoc
-
 @JsonSerializable()
 class _$_Shape implements _Shape {
   const _$_Shape(

@@ -167,7 +167,6 @@ class __$StopCopyWithImpl<$Res> extends _$StopCopyWithImpl<$Res>
 }
 
 /// @nodoc
-
 @JsonSerializable()
 class _$_Stop implements _Stop {
   const _$_Stop(

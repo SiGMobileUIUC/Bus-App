@@ -121,7 +121,6 @@ class __$CalendarDateCopyWithImpl<$Res> extends _$CalendarDateCopyWithImpl<$Res>
 }
 
 /// @nodoc
-
 @JsonSerializable()
 class _$_CalendarDate implements _CalendarDate {
   const _$_CalendarDate({required this.date, required this.serviceId});

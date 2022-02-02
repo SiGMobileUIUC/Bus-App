@@ -5,7 +5,6 @@ part 'stop_point.g.dart';
 
 @freezed
 class StopPoint with _$StopPoint {
-  @JsonSerializable()
   const factory StopPoint({
     required String code,
     required String stopId,

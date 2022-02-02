@@ -8,7 +8,6 @@ part 'vehicle.g.dart';
 
 @freezed
 class Vehicle with _$Vehicle {
-  @JsonSerializable()
   const factory Vehicle({
     required String vehicleId,
     required Trip trip,

@@ -311,7 +311,6 @@ class __$DepartureCopyWithImpl<$Res> extends _$DepartureCopyWithImpl<$Res>
 }
 
 /// @nodoc
-
 @JsonSerializable()
 class _$_Departure implements _Departure {
   const _$_Departure(

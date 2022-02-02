@@ -117,7 +117,6 @@ class __$LocationCopyWithImpl<$Res> extends _$LocationCopyWithImpl<$Res>
 }
 
 /// @nodoc
-
 @JsonSerializable()
 class _$_Location implements _Location {
   const _$_Location({required this.lat, required this.lng});
