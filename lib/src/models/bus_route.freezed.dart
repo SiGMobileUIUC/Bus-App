@@ -169,7 +169,7 @@ class __$BusRouteCopyWithImpl<$Res> extends _$BusRouteCopyWithImpl<$Res>
 
 /// @nodoc
 
-@JsonSerializable(explicitToJson: true, fieldRename: FieldRename.snake)
+@JsonSerializable()
 class _$_BusRoute implements _BusRoute {
   const _$_BusRoute(
       {required this.routeColor,

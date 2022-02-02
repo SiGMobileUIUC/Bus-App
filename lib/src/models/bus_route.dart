@@ -5,7 +5,7 @@ part 'bus_route.g.dart';
 
 @freezed
 class BusRoute with _$BusRoute {
-  @JsonSerializable(explicitToJson: true, fieldRename: FieldRename.snake)
+  @JsonSerializable()
   const factory BusRoute({
     required String routeColor,
     required String routeId,

@@ -5,7 +5,7 @@ part 'stop_time.g.dart';
 
 @freezed
 class StopTime with _$StopTime {
-  @JsonSerializable(explicitToJson: true, fieldRename: FieldRename.snake)
+  @JsonSerializable()
   const factory StopTime({
     required String arrivalTimes,
     required String departureTimes,

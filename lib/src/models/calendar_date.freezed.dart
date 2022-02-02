@@ -122,7 +122,7 @@ class __$CalendarDateCopyWithImpl<$Res> extends _$CalendarDateCopyWithImpl<$Res>
 
 /// @nodoc
 
-@JsonSerializable(explicitToJson: true, fieldRename: FieldRename.snake)
+@JsonSerializable()
 class _$_CalendarDate implements _CalendarDate {
   const _$_CalendarDate({required this.date, required this.serviceId});
 

@@ -312,7 +312,7 @@ class __$DepartureCopyWithImpl<$Res> extends _$DepartureCopyWithImpl<$Res>
 
 /// @nodoc
 
-@JsonSerializable(explicitToJson: true, fieldRename: FieldRename.snake)
+@JsonSerializable()
 class _$_Departure implements _Departure {
   const _$_Departure(
       {required this.destination,

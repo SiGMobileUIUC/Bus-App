@@ -7,7 +7,7 @@ part 'stop.g.dart';
 
 @freezed
 class Stop with _$Stop {
-  @JsonSerializable(explicitToJson: true, fieldRename: FieldRename.snake)
+  @JsonSerializable()
   const factory Stop({
     required String stopId,
     required String stopName,

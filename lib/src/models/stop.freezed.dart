@@ -168,7 +168,7 @@ class __$StopCopyWithImpl<$Res> extends _$StopCopyWithImpl<$Res>
 
 /// @nodoc
 
-@JsonSerializable(explicitToJson: true, fieldRename: FieldRename.snake)
+@JsonSerializable()
 class _$_Stop implements _Stop {
   const _$_Stop(
       {required this.stopId,

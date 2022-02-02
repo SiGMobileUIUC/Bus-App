@@ -8,7 +8,7 @@ part 'departure.g.dart';
 
 @freezed
 class Departure with _$Departure {
-  @JsonSerializable(explicitToJson: true, fieldRename: FieldRename.snake)
+  @JsonSerializable()
   const factory Departure({
     required String destination,
     required DateTime expected,

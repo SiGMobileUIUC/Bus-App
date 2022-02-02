@@ -168,7 +168,7 @@ class __$TripCopyWithImpl<$Res> extends _$TripCopyWithImpl<$Res>
 
 /// @nodoc
 
-@JsonSerializable(explicitToJson: true, fieldRename: FieldRename.snake)
+@JsonSerializable()
 class _$_Trip implements _Trip {
   const _$_Trip(
       {required this.routeId,

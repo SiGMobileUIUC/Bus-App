@@ -5,7 +5,7 @@ part 'calendar_date.g.dart';
 
 @freezed
 class CalendarDate with _$CalendarDate {
-  @JsonSerializable(explicitToJson: true, fieldRename: FieldRename.snake)
+  @JsonSerializable()
   const factory CalendarDate({
     required DateTime date,
     required String serviceId,

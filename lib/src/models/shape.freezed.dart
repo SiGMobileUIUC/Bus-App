@@ -168,7 +168,7 @@ class __$ShapeCopyWithImpl<$Res> extends _$ShapeCopyWithImpl<$Res>
 
 /// @nodoc
 
-@JsonSerializable(explicitToJson: true, fieldRename: FieldRename.snake)
+@JsonSerializable()
 class _$_Shape implements _Shape {
   const _$_Shape(
       {required this.shapeDistTraveled,

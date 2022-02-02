@@ -5,7 +5,7 @@ part 'trip.g.dart';
 
 @freezed
 class Trip with _$Trip {
-  @JsonSerializable(explicitToJson: true, fieldRename: FieldRename.snake)
+  @JsonSerializable()
   const factory Trip({
     required String routeId,
     required String serviceId,

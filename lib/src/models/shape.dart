@@ -5,7 +5,7 @@ part 'shape.g.dart';
 
 @freezed
 class Shape with _$Shape {
-  @JsonSerializable(explicitToJson: true, fieldRename: FieldRename.snake)
+  @JsonSerializable()
   const factory Shape({
     required String shapeDistTraveled,
     required double shapePtLat,

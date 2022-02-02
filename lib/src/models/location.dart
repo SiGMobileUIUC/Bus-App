@@ -5,7 +5,7 @@ part 'location.g.dart';
 
 @freezed
 class Location with _$Location {
-  @JsonSerializable(explicitToJson: true, fieldRename: FieldRename.snake)
+  @JsonSerializable()
   const factory Location({
     required double lat,
     required double lng,

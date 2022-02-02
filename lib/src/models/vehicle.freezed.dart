@@ -235,7 +235,7 @@ class __$VehicleCopyWithImpl<$Res> extends _$VehicleCopyWithImpl<$Res>
 
 /// @nodoc
 
-@JsonSerializable(explicitToJson: true, fieldRename: FieldRename.snake)
+@JsonSerializable()
 class _$_Vehicle implements _Vehicle {
   const _$_Vehicle(
       {required this.vehicleId,

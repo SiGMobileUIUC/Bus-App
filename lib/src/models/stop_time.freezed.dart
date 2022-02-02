@@ -169,7 +169,7 @@ class __$StopTimeCopyWithImpl<$Res> extends _$StopTimeCopyWithImpl<$Res>
 
 /// @nodoc
 
-@JsonSerializable(explicitToJson: true, fieldRename: FieldRename.snake)
+@JsonSerializable()
 class _$_StopTime implements _StopTime {
   const _$_StopTime(
       {required this.arrivalTimes,
