@@ -20,7 +20,7 @@ class ApiResponse with _$ApiResponse {
 
   factory ApiResponse.fromJson(Map<String, dynamic> json) => _$ApiResponseFromJson(json);
 
-  factory ApiResponse.fromJsonWithData(Map<String, dynamic> json, String dataKey) {
+  factory ApiResponse.fromJsonWithData(Map<String, dynamic> json, {required String dataKey}) {
     return _$ApiResponseFromJson(json).copyWith(data: json[dataKey]);
   }
 }
