@@ -21,24 +21,26 @@ environment:
   sdk: ">=2.12.0 <3.0.0"
 
 dependencies:
-  cupertino_icons: ^1.0.2
-  dartz: ^0.10.0
-  dio: ^4.0.0
+  cupertino_icons: ^1.0.4
+  dartz: ^0.10.1
+  dio: ^4.0.4
   flutter:
     sdk: flutter
+  freezed_annotation: ^1.1.0
   flutter_config: ^2.0.0
-  flutter_platform_widgets: ^1.9.5
-  google_maps_flutter: ^2.0.11
-  json_annotation: ^4.3.0
-  material_floating_search_bar: ^0.3.4
-  provider: ^6.0.1
+  flutter_platform_widgets: ^1.12.1
+  google_maps_flutter: ^2.1.1
+  json_annotation: ^4.4.0
+  material_floating_search_bar: ^0.3.6
+  provider: ^6.0.2
 
 dev_dependencies:
-  build_runner: ^2.1.4
-  flutter_lints: null
+  build_runner: ^2.1.7
+  flutter_lints: ^1.0.4
   flutter_test:
     sdk: flutter
-  json_serializable: ^6.0.1
+  freezed: ^1.1.1
+  json_serializable: ^6.1.4
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 # The following section is specific to Flutter.
