@@ -1,34 +1,20 @@
-import 'package:json_annotation/json_annotation.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 
 import 'stop_point.dart';
 
+part 'stop.freezed.dart';
 part 'stop.g.dart';
 
-@JsonSerializable()
-class Stop {
-  @JsonKey(name: 'stop_id')
-  late String id;
-  @JsonKey(name: 'stop_name')
-  late String name;
-  late String code;
-  late double? distance;
-  @JsonKey(name: 'stop_points')
-  late List<StopPoint> stopPoints;
-
-  Stop({
-    required this.id,
-    required this.name,
-    required this.code,
-    required this.distance,
-    required this.stopPoints,
-  });
+@freezed
+class Stop with _$Stop {
+  @JsonSerializable(explicitToJson: true, fieldRename: FieldRename.snake)
+  const factory Stop({
+    required String stopId,
+    required String stopName,
+    required String code,
+    required double? distance,
+    required List<StopPoint> stopPoints,
+  }) = _Stop;
 
   factory Stop.fromJson(Map<String, dynamic> json) => _$StopFromJson(json);
-
-  Map<String, dynamic> toJson() => _$StopToJson(this);
-
-  @override
-  String toString() {
-    return 'Stop(id: $id, name: $name, code: $code, distance: $distance, stopPoints: $stopPoints)';
-  }
 }
