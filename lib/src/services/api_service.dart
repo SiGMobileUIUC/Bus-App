@@ -42,7 +42,7 @@ class ApiService {
       );
       return right(apiResponse.data.map((e) => CalendarDate.fromJson(e)).toList());
     } catch (e) {
-      return left(Failure(message: 'Not working'));
+      return left(const Failure(message: 'Not working'));
     }
   }
 
@@ -61,7 +61,7 @@ class ApiService {
       );
       return right(apiResponse.data.map((e) => CalendarDate.fromJson(e)).toList());
     } catch (e) {
-      return left(Failure(message: 'Not working'));
+      return left(const Failure(message: 'Not working'));
     }
   }
 
@@ -90,7 +90,7 @@ class ApiService {
       );
       return right(apiResponse.data.map((e) => Departure.fromJson(e)).toList());
     } catch (e) {
-      return left(Failure(message: 'Not working'));
+      return left(const Failure(message: 'Not working'));
     }
   }
 
@@ -111,7 +111,7 @@ class ApiService {
       );
       return right(apiResponse.data.map((e) => BusRoute.fromJson(e)).toList());
     } catch (e) {
-      return left(Failure(message: 'Not working'));
+      return left(const Failure(message: 'Not working'));
     }
   }
 
@@ -128,7 +128,7 @@ class ApiService {
       );
       return right(apiResponse.data.map((e) => BusRoute.fromJson(e)).toList());
     } catch (e) {
-      return left(Failure(message: 'Not Working'));
+      return left(const Failure(message: 'Not Working'));
     }
   }
 
@@ -147,7 +147,7 @@ class ApiService {
       );
       return right(apiResponse.data.map((e) => BusRoute.fromJson(e)).toList());
     } catch (e) {
-      return left(Failure(message: 'Not Working'));
+      return left(const Failure(message: 'Not Working'));
     }
   }
 
@@ -167,7 +167,7 @@ class ApiService {
       );
       return right(apiResponse.data.map((e) => Shape.fromJson(e)).toList());
     } catch (e) {
-      return left(Failure(message: 'Not Working'));
+      return left(const Failure(message: 'Not Working'));
     }
   }
 
@@ -192,7 +192,7 @@ class ApiService {
       );
       return right(apiResponse.data.map((e) => Shape.fromJson(e)).toList());
     } catch (e) {
-      return left(Failure(message: 'Not Working'));
+      return left(const Failure(message: 'Not Working'));
     }
   }
 
@@ -213,7 +213,7 @@ class ApiService {
       );
       return right(apiResponse.data.map((e) => Stop.fromJson(e)).toList());
     } catch (e) {
-      return left(Failure(message: 'Not working'));
+      return left(const Failure(message: 'Not working'));
     }
   }
 
@@ -231,7 +231,7 @@ class ApiService {
       print(apiResponse.data.map((e) => Stop.fromJson(e)).toList());
       return right(apiResponse.data.map((e) => Stop.fromJson(e)).toList());
     } catch (e) {
-      return left(Failure(message: 'Not Working'));
+      return left(const Failure(message: 'Not Working'));
     }
   }
 
@@ -252,7 +252,7 @@ class ApiService {
       );
       return right(apiResponse.data.map((e) => Stop.fromJson(e)).toList());
     } catch (e) {
-      return left(Failure(message: 'Not Working'));
+      return left(const Failure(message: 'Not Working'));
     }
   }
 
@@ -272,7 +272,7 @@ class ApiService {
       );
       return right(apiResponse.data.map((e) => StopTime.fromJson(e)).toList());
     } catch (e) {
-      return left(Failure(message: 'Not Working'));
+      return left(const Failure(message: 'Not Working'));
     }
   }
 
@@ -297,7 +297,7 @@ class ApiService {
       );
       return right(apiResponse.data.map((e) => StopTime.fromJson(e)).toList());
     } catch (e) {
-      return left(Failure(message: 'Not Working'));
+      return left(const Failure(message: 'Not Working'));
     }
   }
 
@@ -319,7 +319,7 @@ class ApiService {
       );
       return right(apiResponse.data.map((e) => Trip.fromJson(e)).toList());
     } catch (e) {
-      return left(Failure(message: 'Not Working'));
+      return left(const Failure(message: 'Not Working'));
     }
   }
 
@@ -338,7 +338,7 @@ class ApiService {
       );
       return right(apiResponse.data.map((e) => Trip.fromJson(e)).toList());
     } catch (e) {
-      return left(Failure(message: 'Not Working'));
+      return left(const Failure(message: 'Not Working'));
     }
   }
 
@@ -357,7 +357,7 @@ class ApiService {
       );
       return right(apiResponse.data.map((e) => Trip.fromJson(e)).toList());
     } catch (e) {
-      return left(Failure(message: 'Not Working'));
+      return left(const Failure(message: 'Not Working'));
     }
   }
 
@@ -377,7 +377,7 @@ class ApiService {
       );
       return right(apiResponse.data.map((e) => Vehicle.fromJson(e)).toList());
     } catch (e) {
-      return left(Failure(message: 'Not Working'));
+      return left(const Failure(message: 'Not Working'));
     }
   }
 
@@ -393,7 +393,7 @@ class ApiService {
       );
       return right(apiResponse.data.map((e) => Vehicle.fromJson(e)).toList());
     } catch (e) {
-      return left(Failure(message: 'Not Working'));
+      return left(const Failure(message: 'Not Working'));
     }
   }
 
@@ -412,7 +412,7 @@ class ApiService {
       );
       return right(apiResponse.data.map((e) => Vehicle.fromJson(e)).toList());
     } catch (e) {
-      return left(Failure(message: 'Not Working'));
+      return left(const Failure(message: 'Not Working'));
     }
   }
 
@@ -440,7 +440,7 @@ class ApiService {
       );
       return right(apiResponse.data.map((e) => ApiUsageDay.fromJson(e)).toList());
     } catch (e) {
-      return left(Failure(message: 'Not Working'));
+      return left(const Failure(message: 'Not Working'));
     }
   }
 
@@ -456,7 +456,7 @@ class ApiService {
       );
       return right(DateTime.parse(apiResponse.data));
     } catch (e) {
-      return left(Failure(message: 'Not Working'));
+      return left(const Failure(message: 'Not Working'));
     }
   }
 }
