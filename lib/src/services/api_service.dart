@@ -1,5 +1,6 @@
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
+import 'package:flutter_config/flutter_config.dart';
 import 'package:intl/intl.dart';
 
 import '../models/api_response/api_response.dart';
@@ -17,7 +18,7 @@ import '../models/vehicle/vehicle.dart';
 
 class ApiService {
   late Dio _dio;
-  static const String _apiKey = '***REMOVED***';
+  final String _apiKey = FlutterConfig.get('CUMTD_API_KEY');
 
   ApiService() {
     _dio = Dio(
