@@ -115,7 +115,7 @@ class ApiService {
     }
   }
 
-  Future<Either<Failure, List<BusRoute>>> getAllRoutes({required List<String> routeIds}) async {
+  Future<Either<Failure, List<BusRoute>>> getAllRoutes() async {
     try {
       Response res = await _dio.get(
         'getroutes',
