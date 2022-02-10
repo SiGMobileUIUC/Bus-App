@@ -13,7 +13,5 @@ class Location with _$Location {
 
   factory Location.fromLatLng(LatLng latlng) => Location(lat: latlng.latitude, lon: latlng.longitude);
 
-  LatLng toLatLng() => LatLng(lat, lon);
-
   factory Location.fromJson(Map<String, dynamic> json) => _$LocationFromJson(json);
 }
