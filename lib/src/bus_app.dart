@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
-import 'package:provider/provider.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'misc/colors.dart';
 import 'screens/home_screen.dart';
@@ -30,10 +30,7 @@ class _BusAppState extends State<BusApp> {
       barBackgroundColor: AppColors.secondaryUofILight,
       primaryColor: AppColors.secondaryUofILightest,
     );
-    return MultiProvider(
-      providers: [
-        Provider(create: (_) => ApiService()),
-      ],
+    return ProviderScope(
       child: PlatformProvider(
         settings: PlatformSettingsData(iosUsesMaterialWidgets: true),
         builder: (context) => PlatformApp(
